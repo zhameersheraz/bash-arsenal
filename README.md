@@ -1,3 +1,4 @@
+![bash-arsenal banner](docs/banner.png)
 # bash-arsenal
 
 A curated collection of Bash scripts I wrote while learning the shell, organized
