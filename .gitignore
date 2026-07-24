@@ -1,0 +1,29 @@
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+
+# Test outputs and scratch
+*.log
+*.tmp
+*.bak
+*.out
+test-output/
+scratch/
+
+# Backup files some tools leave behind
+*.sh~
+*.sh.bak
+
+# Sensitive stuff — never commit
+.env
+*.key
+*.pem
+secrets/
