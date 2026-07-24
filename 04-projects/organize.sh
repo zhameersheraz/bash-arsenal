@@ -80,14 +80,14 @@ skipped=0
 while IFS= read -r -d '' file; do
   dir=$(dirname "$file")
   if should_skip_dir "$dir"; then
-    ((skipped++))
+    ((skipped += 1))
     continue
   fi
 
   # Skip hidden files and the script itself
   base=$(basename "$file")
-  [[ "$base" == .* ]] && { ((skipped++)); continue; }
-  [[ "$file" == "$0" ]] && { ((skipped++)); continue; }
+  [[ "$base" == .* ]] && { ((skipped += 1)); continue; }
+  [[ "$file" == "$0" ]] && { ((skipped += 1)); continue; }
 
   # No extension -> "other"
   if [[ "$base" != *.* ]]; then
@@ -122,7 +122,7 @@ while IFS= read -r -d '' file; do
     mkdir -p "$dest_dir"
     mv "$file" "$dest_file"
   fi
-  ((moved++))
+  ((moved += 1))
 done < <(find "$TARGET" -maxdepth 1 -type f -print0)
 
 echo
